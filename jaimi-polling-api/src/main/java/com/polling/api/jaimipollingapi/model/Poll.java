@@ -13,10 +13,11 @@ public class Poll {
     @Id
     @GeneratedValue
     @Column(name = "OPTION_ID")
-    @NotEmpty
+
     private Long id;
 
     @Column(name = "Question")
+    @NotEmpty
     private String question;
 //The @ManyToOne annotation indicates that an Option instance can have zero or more Vote instances associated with it.
     @OneToMany(cascade= CascadeType.ALL)

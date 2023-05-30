@@ -13,10 +13,6 @@ public class Option {
    private String value;
 
 
-   public Option(){
-
-   }
-
 
     public Long getId() {
         return id;

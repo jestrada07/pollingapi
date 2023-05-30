@@ -43,9 +43,8 @@ public class PollService {
     }
 
     protected void verifyPoll(Long pollId) throws ResourceNotFoundException {
-        Optional<Poll> poll = pollRepository.findById(pollId);
-        if(poll.isEmpty()){ // if the poll given cannot be found/doesn't exist it will return the message below
-            throw new ResourceNotFoundException("The poll with id " + pollId + " does not exist");
+        if(!(this.pollRepository.existsById(pollId))){ // if the poll given cannot be found/doesn't exist it will return the message below
+            throw (new ResourceNotFoundException("The poll with id " + pollId + " does not exist"));
         }
     }
 
